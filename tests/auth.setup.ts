@@ -18,6 +18,7 @@ setup('authenticate', async ({ page }) => {
   // const { id, emailAddress } = await mailslurp.createInbox()
   const id = process.env.EMAIL_ID
   const emailAddress = process.env.EMAIL_ADDRESS
+  console.log(id, emailAddress);
 
   // fill sign up form
   await page.getByPlaceholder('email@example.com').fill(emailAddress ?? '')
