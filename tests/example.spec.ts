@@ -9,6 +9,7 @@ test('test_1', async ({ page }) => {
 
 test('test_2', async ({ page }) => {
     const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
+    console.log(BASE_URL);
     if (!BASE_URL) throw new Error('BASE_URL undefined')
     await page.goto(BASE_URL)
     await expect(page.getByRole('link')).toBeVisible();

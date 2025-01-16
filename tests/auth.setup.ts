@@ -10,7 +10,6 @@ setup('authenticate', async ({ page }) => {
   console.log(BASE_URL);
   await page.goto(BASE_URL)
 
-  // create a new inbox
   const apiKey = process.env.MAILSLURP_API_KEY
   if (!apiKey) throw new Error('apiKey undefined')
   const mailslurp = new MailSlurp({ apiKey });
