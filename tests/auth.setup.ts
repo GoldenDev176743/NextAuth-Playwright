@@ -5,7 +5,6 @@ import { JSDOM } from 'jsdom'
 const authFile = 'playwright/.auth/guest.json'
 
 setup('authenticate', async ({ page }) => {
-  // load playground app
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   if (!BASE_URL) throw new Error('BASE_URL undefined')
   console.log(BASE_URL);
@@ -14,8 +13,7 @@ setup('authenticate', async ({ page }) => {
   // create a new inbox
   const apiKey = process.env.MAILSLURP_API_KEY
   if (!apiKey) throw new Error('apiKey undefined')
-  const mailslurp = new MailSlurp({ apiKey })
-  // const { id, emailAddress } = await mailslurp.createInbox()
+  const mailslurp = new MailSlurp({ apiKey });
   const id = process.env.EMAIL_ID
   const emailAddress = process.env.EMAIL_ADDRESS
   // console.log(id, emailAddress);
