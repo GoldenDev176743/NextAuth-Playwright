@@ -16,7 +16,6 @@ setup('authenticate', async ({ page }) => {
   const mailslurp = new MailSlurp({ apiKey });
   const id = process.env.EMAIL_ID
   const emailAddress = process.env.EMAIL_ADDRESS
-  // console.log(id, emailAddress);
 
   // fill sign up form
   await page.getByPlaceholder('email@example.com').fill(emailAddress ?? '')
@@ -29,7 +28,6 @@ setup('authenticate', async ({ page }) => {
     const dom = new JSDOM(email.body)
     const document = dom.window.document
 
-    // Extract the URL from the anchor tag
     const anchor = document.querySelector('a[href]')
 
     if (anchor) {
