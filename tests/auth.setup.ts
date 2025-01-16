@@ -8,6 +8,7 @@ setup('authenticate', async ({ page }) => {
   // load playground app
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
   if (!BASE_URL) throw new Error('BASE_URL undefined')
+  console.log(BASE_URL);
   await page.goto(BASE_URL)
 
   // create a new inbox
